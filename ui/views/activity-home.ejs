@@ -1,0 +1,81 @@
+<!-- remember ejs file run on server -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/image/icon.png">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>toys store</title>
+</head>
+<body>
+
+<!-- menubar -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img class="navbar-brand" src="/image/icon.png" style="width: 50px ; height: 50px; border-radius: 50px ; border: solid 2px #0f5132">Toys Store</img>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views">Views</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"  aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search..." >
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- menubar -->
+
+<!-- form -->
+<div class="container" style="max-width: 600px">
+    <div class="text-center mt-4">
+        <h4 class="mb-3">Add some new toy</h4>
+    </div>
+    <form action="/api/create" method="post">
+        <div class="row">
+            <div class="col">
+                <div class="form-outline">
+                    <label class="col-form-label">Product name</label>
+                    <input type="text" class="form-control" name="product_name" placeholder="Put on the product name...">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="col-form-label">Product price</label>
+                    <input type="number" class="form-control" name="product_price" step="any"  placeholder="0000.0">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-outline" style="max-width: 80px; margin: 20px auto 0;">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="radio" name="product_status" value="use" >
+                <label class="form-check-label">use</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="radio" name="product_status" value="unused">
+                <label class="form-check-label" >unused</label>
+            </div>
+        </div>
+
+        <div class="align-items-center" style="margin: 15px auto; max-width: 125px">
+                <button type="submit" class="btn btn-outline-success">send</button>
+                <button type="reset" class="btn btn-outline-warning">reset</button>
+        </div>
+    </form>
+</div>
+<!-- form -->
+</body>
+</html>
